@@ -1,0 +1,66 @@
+<div class="auth-forms">
+    <h2 class="border px-4 py-2 rounded-5 bg-white bg-opacity-50 text-center">Welcome to Todo'S</h2>
+    
+    <form (ngSubmit)="register()" class="signup-form border border-primary p-5 rounded-5 bg-light bg-opacity-25 fw-semibold">
+        <div class="mb-3 d-flex">
+          <div >
+
+          <label for="firstName" class="form-label">First Name</label>
+          <input
+           type="text" 
+           class="form-control" 
+           id="firstName" 
+           [(ngModel)]="firstName"
+           name="firstName"
+           placeholder="Enter first name" 
+           required>
+
+        </div>
+        <div class="ms-2">
+
+          <label for="lastName" class="form-label">Last Name</label>
+          <input
+           type="text" 
+           class="form-control" 
+           id="lastName" 
+           [(ngModel)]="lastName"
+           name="lastName"
+           placeholder="Enter last name" 
+           required>
+
+        </div>
+        </div>
+        <div class="mb-3">
+
+          <label for="inputEmail1" class="form-label">Email address</label>
+          <input
+           type="email" 
+           class="form-control" 
+           id="inputEmail1" 
+           [(ngModel)]="email"
+           name="email"
+           aria-describedby="emailHelp" placeholder="Enter email" 
+           required>
+
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+
+          <label for="inputPassword" class="form-label">Password</label>
+          <input
+           type="password" 
+           class="form-control" 
+           id="inputPassword" 
+           [(ngModel)]="password"
+           name="password"
+           placeholder="Enter password" 
+           required>
+
+        </div>
+        <div>
+          <button type="submit" class="btn btn-primary fw-bolder">Submit</button>
+          <a routerLink="/login" class="float-end m-2">Login now ; ) </a>
+        </div>
+      </form>
+    
+    </div>

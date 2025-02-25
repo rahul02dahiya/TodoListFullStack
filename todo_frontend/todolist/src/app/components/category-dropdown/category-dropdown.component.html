@@ -1,0 +1,30 @@
+<div class="card mb-3">
+  <div class="card-header d-flex justify-content-between align-items-center" (click)="toggleTodos()">
+    <div>
+      <h5 class="mb-0">{{ category.name }}</h5>
+      <small class="text-muted">{{ category.description }}</small>
+    </div>
+    <button class="btn btn-outline-secondary btn-sm">
+      {{ showTodos ? 'Hide' : 'Show' }} Todos ▼
+    </button>
+  </div>
+
+  <ul class="list-group list-group-flush" *ngIf="showTodos">
+    <li class="list-group-item d-flex justify-content-between align-items-center bg-opacity-25"
+      *ngFor="let todo of category.todoList"
+      [ngClass]="{'bg-success bg-gradient bg-opacity-50': todo.status, ' bg-warning bg-gradient bg-opacity-50': !todo.status}">
+      <div>
+        <strong>{{ todo.title }}</strong>
+        <br />
+        <small class="text-muted">{{ todo.description }}</small>
+        <br />
+        <small class="text-muted">Start: {{ todo.startTime | date:'short' }}</small>
+      </div>
+      <span class="btn btn-sm ms-auto" [ngClass]="todo.status ? 'bg-success' : 'bg-warning'" (click)="confirmStatusChange(todo)">
+        {{ todo.status ? 'Completed' : 'Pending' }}
+      </span>
+      <button type="button" class="btn btn-sm btn-outline-primary m-2">Edit</button>
+      <span type="button" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></span>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="hasShownOverlayPopupBefore" value="true"/>
+	<section name="java.lang.Class">
+		<item key="replaceBarOpen" value="true"/>
+		<list key="findhistory">
+			<item value="findAllByUserId"/>
+			<item value="userEmailId"/>
+			<item value="Category"/>
+			<item value="Todo"/>
+			<item value="User"/>
+			<item value="finda"/>
+			<item value="CategoryDto"/>
+			<item value="TodoDto"/>
+			<item value="UserDto"/>
+			<item value="dto"/>
+			<item value="endDate"/>
+			<item value="startDate"/>
+			<item value="error"/>
+			<item value="slf4j"/>
+			<item value="lombok"/>
+		</list>
+		<list key="replacehistory">
+			<item value="category"/>
+			<item value="todo"/>
+			<item value="user"/>
+			<item value="Category"/>
+			<item value="Todo"/>
+			<item value="User"/>
+			<item value="endTime"/>
+			<item value="startTime"/>
+			<item value="info"/>
+			<item value="userDto."/>
+			<item value="Repo"/>
+			<item value="Long"/>
+		</list>
+	</section>
+</section>

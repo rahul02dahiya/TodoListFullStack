@@ -1,0 +1,25 @@
+<nav class="fixed-top" >
+    <ul  class="navbar my-2 bg-light-subtle">
+    <li class="logo">
+        <img src="../../logo.png" alt="logo">
+    </li>
+    <li id="wordmark"><a routerLink="/home" class="text-decoration-none">TodoList</a></li>
+    <li id="add-cat-btn">
+        <a routerLink="/addcategory">
+        <button class="btn btn-primary">
+            <i class="fa-solid fa-plus"></i>
+            Add category 
+        </button>
+    </a>
+    </li>
+    <li id="add-todo-btn">
+        <a routerLink="/addtodo">
+        <button class="btn btn-primary">
+            <i class="fa-solid fa-plus"></i>
+            Add Todo 
+        </button>
+    </a>
+    </li>
+    <li id="logout-btn" (click)="logout()" class="text-primary mx-3"><i class="fa-duotone fa-solid fa-right-from-bracket"></i></li>
+</ul>
+</nav>

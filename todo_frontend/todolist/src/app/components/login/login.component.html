@@ -1,0 +1,39 @@
+<div class="auth-forms">
+
+<h2 class="border px-4 py-2 rounded-5 bg-white bg-opacity-50 text-center">Welcome to Todo'S</h2>
+
+<form (ngSubmit)="login()" class="login-form border border-primary p-5 rounded-5 bg-light bg-opacity-25 fw-semibold">
+
+    <div class="mb-3">
+      <label for="inputEmail1" class="form-label">Email address</label>
+      <input 
+      placeholder="Your email"
+        type="email" 
+        class="form-control" 
+        id="inputEmail1" 
+        [(ngModel)]="userEmail"
+        name="userEmail"
+        aria-describedby="emailHelp" 
+        required>
+      <div id="emailHelp" class="form-text">We'll never share your details with anyone else.</div>
+    </div>  
+
+    <div class="mb-3">
+      <label for="inputPassword" class="form-label">Password</label>
+      <input 
+      placeholder="Your password"
+        type="password" 
+        class="form-control" 
+        id="inputPassword" 
+        [(ngModel)]="password"
+        name="password"
+        required>
+    </div>
+    
+    <div>
+      <button type="submit" class="btn btn-primary fw-bolder">Submit</button>
+      <a routerLink="/signup" class="float-end m-2">Register now ; ) </a>
+    </div>
+
+  </form>
+</div>
