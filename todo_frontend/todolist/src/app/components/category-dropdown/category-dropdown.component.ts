@@ -23,9 +23,26 @@ confirmStatusChange(todo:any){
     if (confirmation) {
       const newStatus = !todo.status;
       this.taskService.updateStatus(todo.id, newStatus).subscribe(response => {
-        todo.status = newStatus;
         console.log('Todo status updated:', response);
       });
     }
+}
+
+deleteTodo(todoId: number) {
+  const confirmation = window.confirm('Are you sure you want to delete this todo?');
+  if (confirmation) {
+    this.taskService.deleteTodo(todoId).subscribe(response => {
+      console.log('Todo deleted:', response);
+    });
+  }
+}
+
+deleteCategory(catId: number) {
+  const confirmation = window.confirm('Are you sure you want to delete this Category?');
+  if (confirmation) {
+    this.taskService.deleteCategory(catId).subscribe(response => {
+      console.log('Category deleted:', response);
+    });
+  }
 }
 }

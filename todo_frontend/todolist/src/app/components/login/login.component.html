@@ -2,7 +2,7 @@
 
 <h2 class="border px-4 py-2 rounded-5 bg-white bg-opacity-50 text-center">Welcome to Todo'S</h2>
 
-<form (ngSubmit)="login()" class="login-form border border-primary p-5 rounded-5 bg-light bg-opacity-25 fw-semibold">
+<form #loginForm="ngForm" (ngSubmit)="login()" class="login-form border border-primary p-5 rounded-5 bg-light bg-opacity-25 fw-semibold">
 
     <div class="mb-3">
       <label for="inputEmail1" class="form-label">Email address</label>
@@ -14,7 +14,11 @@
         [(ngModel)]="userEmail"
         name="userEmail"
         aria-describedby="emailHelp" 
-        required>
+        required
+        #emailInput="ngModel">
+        <div *ngIf="emailInput.invalid && emailInput.touched" class="text-danger">
+          Email is required.
+        </div>
       <div id="emailHelp" class="form-text">We'll never share your details with anyone else.</div>
     </div>  
 
@@ -27,11 +31,15 @@
         id="inputPassword" 
         [(ngModel)]="password"
         name="password"
-        required>
+        required
+        #passwordInput="ngModel">
+        <div *ngIf="passwordInput.invalid && passwordInput.touched" class="text-danger">
+          Password is required.
+        </div>
     </div>
     
     <div>
-      <button type="submit" class="btn btn-primary fw-bolder">Submit</button>
+      <button type="submit" class="btn btn-primary fw-bolder" [disabled]="loginForm.invalid">Submit</button>
       <a routerLink="/signup" class="float-end m-2">Register now ; ) </a>
     </div>
 

@@ -1,7 +1,7 @@
 <div class="auth-forms">
     <h2 class="border px-4 py-2 rounded-5 bg-white bg-opacity-50 text-center">Welcome to Todo'S</h2>
     
-    <form (ngSubmit)="register()" class="signup-form border border-primary p-5 rounded-5 bg-light bg-opacity-25 fw-semibold">
+    <form #signupForm="ngForm" (ngSubmit)="register()" class="signup-form border border-primary p-5 rounded-5 bg-light bg-opacity-25 fw-semibold">
         <div class="mb-3 d-flex">
           <div >
 
@@ -13,7 +13,11 @@
            [(ngModel)]="firstName"
            name="firstName"
            placeholder="Enter first name" 
-           required>
+           required
+           #fNameInput="ngModel">
+           <div *ngIf="fNameInput.invalid && fNameInput.touched" class="text-danger">
+            First name is required.
+          </div>
 
         </div>
         <div class="ms-2">
@@ -26,7 +30,11 @@
            [(ngModel)]="lastName"
            name="lastName"
            placeholder="Enter last name" 
-           required>
+           required
+           #lNameInput="ngModel">
+           <div *ngIf="lNameInput.invalid && lNameInput.touched" class="text-danger">
+            Last name is required.
+          </div>
 
         </div>
         </div>
@@ -40,7 +48,8 @@
            [(ngModel)]="email"
            name="email"
            aria-describedby="emailHelp" placeholder="Enter email" 
-           required>
+           required
+           #emailInput="ngModel">
 
           <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
@@ -54,11 +63,12 @@
            [(ngModel)]="password"
            name="password"
            placeholder="Enter password" 
-           required>
+           required
+           #passwordInput="ngModel">
 
         </div>
         <div>
-          <button type="submit" class="btn btn-primary fw-bolder">Submit</button>
+          <button type="submit" class="btn btn-primary fw-bolder" [disabled]="signupForm.invalid" >Submit</button>
           <a routerLink="/login" class="float-end m-2">Login now ; ) </a>
         </div>
       </form>
